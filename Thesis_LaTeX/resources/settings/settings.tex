@@ -1,0 +1,91 @@
+\documentclass[chapterprefix=false, 12pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod]{article}
+
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{helvet}
+\newcommand{\rulesep}{\unskip\ \vrule\ }
+
+%Anpassung der Seitenränder (Standard bottom ca. 52mm abzüglich von ca. 4mm für die nach oben rechts gewanderte Seitenzahl)
+\usepackage[bottom=35mm,left=25mm,right=25mm]{geometry}
+
+%Tweaks for the Bibliograohy
+\usepackage{csquotes}
+\usepackage{natbib}
+\bibliographystyle{rusnat}
+\setcitestyle{authoryear,open={(},close={)}}
+\renewcommand{\bibsection}{}
+
+%Tweaks für scrbook
+\usepackage{scrhack}
+
+\usepackage{tabularx} % in the preamble
+
+%Blindtext
+\usepackage{blindtext}
+
+%Erlaubt unter anderem Umbrüche captions und Captions auf neuer Seite
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+
+%Stichwortverzeichnis
+\usepackage{imakeidx}
+
+%Kompakte Listen
+\usepackage{paralist}
+
+%Zitate besser formatieren und darstellen
+\usepackage{epigraph}
+
+%Glossar, Stichwortverzeichnis (Akronyme werden als eigene Liste aufgeführt)
+\usepackage[toc, acronym]{glossaries}
+
+%Anpassung von Kopf- und Fußzeile
+%beeinflusst die erste Seite des Kapitels
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+%\input{resources/styles/header_footer}
+\setlength{\parindent}{0em}
+
+%Zeilenabstand 1,5
+\usepackage[onehalfspacing]{setspace}
+
+%Verbesserte Darstellung der Buchstaben zueinander
+\usepackage[stretch=10]{microtype}
+
+%Deutsche Bezeichnungen für angezeigte Namen (z.B. Inhaltsverzeichnis etc.)
+\usepackage[english]{babel}
+
+%Unterstützung von Umlauten und anderen Sonderzeichen (UTF-8)
+\usepackage{lmodern}
+\usepackage[utf8]{luainputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\setlength{\emergencystretch}{1em}
+
+%Einfachere Zitate
+\usepackage{epigraph}
+
+%Unterstützung der H Positionierung (keine automatische Verschiebung eingefügter Elemente)
+\usepackage{float}
+
+%Erlaubt Umbrüche innerhalb von Tabellen
+\usepackage{tabularx}
+
+%Erlaubt Seitenumbrüche innerhalb von Tabellen
+\usepackage{longtable}
+
+%Erlaubt die Darstellung von Sourcecode mit Highlighting
+\usepackage{listings}
+
+%Definition eigener Farben bei Nutzung eines selbst vergebene Namens
+\usepackage[table,xcdraw]{xcolor}
+
+%Vektorgrafiken
+\usepackage{tikz}
+
+%Grafiken (wie jpg, png, etc.)
+\usepackage{graphicx}
+
+%Grafiken von Text umlaufen lassen
+\usepackage{wrapfig}
+
+%Ermöglicht Verknüpfungen innerhalb des Dokumentes (e.g. for PDF), Links werden durch "hidelink" nicht explizit hervorgehoben
+\usepackage[hidelinks,english]{hyperref}

@@ -1,0 +1,93 @@
+% Dokumenteinstellungen und Anpassungen
+\input{resources/settings/settings}
+\input{resources/settings/codeLanguages.tex}
+\input{resources/styles/adjustments}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{eso-pic}
+\usepackage{textgreek}
+\usepackage{amsmath}
+
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{resources/images/deckblatt.png}%
+\vfill
+}}}
+
+
+\include{titles/graduation}
+% Variablen für das Deckblatt
+\gradeType{Master of Science (M.Sc.)}
+\englishTitle{The DNA Repair Atlas: A user-friendly web resource for the identification of functional DNA repair modules}
+\authorFirstname{Pascal}
+\authorLastname{Rihm}
+\authorBirthplace{Frankenthal (Pfalz)}
+\discipline{Molecular Genetics}
+\courseOfStudies{Biology - Microbial and Plant Biotechnology}
+\matrikelnr{392842}
+\submitDate{19.05.2020}
+\supervisor{Dr. Markus Räschle}
+\firstExaminer{Prof. Dr. Zuzana Storchová}
+\secondExaminer{Jun.-Prof. Dr. Timo Mühlhaus}
+
+
+\include{titles/eidesstatt}
+\place{Kaiserslautern}
+
+% Neuer Befehl um Subsubsubkapitel schreiben zu können
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+\begin{document}
+
+% Entfernen der Seitenzahlen und BackroundPic als Hintergrund nutzen
+\pagenumbering{gobble}
+\AddToShipoutPicture{\BackgroundPic}
+
+% Titelblatt erzeugen
+\maketitle
+\newpage
+
+% Eidesstattliche Erklärung erzeugen
+\makeeidesstatt
+\thispagestyle{empty}
+
+% Abstract und Inhaltsverzeichnisse einfügen (Numerierung römisch ab Inhaltsverzeichnis)
+\input{chapter/0_Zusammenfassung.tex}
+\newpage
+\input{chapter/0_Abstract.tex}
+\thispagestyle{empty}
+\newpage
+\pagenumbering{Roman}
+\ClearShipoutPicture
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+
+% Kapitel einfügen
+\pagenumbering{arabic}
+\input{chapter/1_Intro.tex}
+\newpage
+\input{chapter/2_Results.tex}
+\newpage
+\input{chapter/3_Discussion.tex}
+\newpage
+\input{chapter/4_Acknowledgement.tex}
+\newpage
+\input{chapter/5_Bibliography.tex}
+\newpage
+
+\end{document}
